@@ -3,46 +3,50 @@
 #include "patient.h"
 #include "doctor.h"
 #include "appointment.h"
+#include "report.h"
 
 using namespace std;
 
 int main () {
 
-    int choice;
+	int choice;
 
-    do {
+	do {
 
-        cout << "\n===== HMS =====\n";
+		cout << "\n===== HMS =====\n";
 
-        cout << "1. Patient Management\n";
-        cout << "2. Doctor Management\n";
-        cout << "3. Appointment Management\n";
-        cout << "0. Exit\n";
+		cout << "1. Patient Management\n";
+		cout << "2. Doctor Management\n";
+		cout << "3. Appointment Management\n";
+		cout << "4. Report Management\n";
+		cout << "0. Exit\n";
 
-        cout << "Choice: ";
-        cin >> choice;
+		cout << "Choice: ";
+		cin >> choice;
 
-        switch(choice) {
+		switch(choice) {
 
-            case 1:
-                patientMenu();
-                break;
+			case 1:
+				patientMenu();
+				break;
+				
+			case 2:
+				doctorMenu();
+				break;
 
-            case 2:
-                doctorMenu();
-                break;
+			case 3:
+				appointmentMenu();
+				break;
 
-            case 3:
-                appointmentMenu();
-                break;
+			case 4:
+				reportMenu();
+			case 0:
+				cout << "\nExiting...\n";
+				break;
 
-            case 0:
-                cout << "\nExiting...\n";
-                break;
+			default:
+				cout << "Invalid choice.\n";
+		}
 
-            default:
-                cout << "Invalid choice.\n";
-        }
-
-    } while(choice != 0);
+	} while(choice != 0);
 }
