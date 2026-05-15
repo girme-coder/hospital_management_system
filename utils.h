@@ -7,6 +7,9 @@ bool validAge(int age);
 
 bool validContact(const std::string& contact);
 
-void pauseScreen();
+bool isValidDate(const std::string& date);
+
+bool isValidTime(const std::string& time);
+
 
 #endif
