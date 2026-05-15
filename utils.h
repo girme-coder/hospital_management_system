@@ -11,5 +11,7 @@ bool isValidDate(const std::string& date);
 
 bool isValidTime(const std::string& time);
 
+bool isFutureDateTime(const std::string& date ,const std::string& time);
+
 
 #endif
