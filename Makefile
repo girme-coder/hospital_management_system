@@ -9,7 +9,8 @@ database.cpp \
 patient.cpp \
 doctor.cpp \
 appointment.cpp \
-utils.cpp
+utils.cpp \
+report.cpp
 
 hms:
 	$(CXX) $(SRC) -o hms $(CXXFLAGS) $(LIBS)
