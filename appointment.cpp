@@ -163,7 +163,10 @@ void bookAppointment() {
 		return;
 	}
 
-
+	if(!isFutureDateTime(a.appointmentDate,a.appointmentTime)){
+		cout << "\n The date and time you currently input is already passed.\n";
+		return;
+	}
 	cout<<"Duration for appointment in minutes: ";
 	cin>> a.duration;
 

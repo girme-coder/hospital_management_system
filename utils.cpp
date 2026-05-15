@@ -74,3 +74,27 @@ bool isValidTime(const string& time) {
 
 	return true;
 }
+
+bool isFutureDateTime(const string& date, const string& inputTime) {
+    int year  = stoi(date.substr(0, 4));
+    int month = stoi(date.substr(5, 2));
+    int day   = stoi(date.substr(8, 2));
+
+    int hour   = stoi(inputTime.substr(0, 2));
+    int minute = stoi(inputTime.substr(3, 2));
+    int second = stoi(inputTime.substr(6, 2));
+
+    tm input = {};
+    input.tm_year = year - 1900;
+    input.tm_mon  = month - 1;
+    input.tm_mday = day;
+    input.tm_hour = hour;
+    input.tm_min  = minute;
+    input.tm_sec  = second;
+    input.tm_isdst = -1;
+
+    time_t Time = mktime(&input);
+    time_t now = time(0);
+
+    return Time >= now;
+}
